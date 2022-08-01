@@ -12,3 +12,12 @@ def login():
     auth_url = sp_oauth.get_authorize_url()
     print(auth_url)
     return redirect(auth_url)
+
+@app.route('/authorize')
+def authorize():
+    sp_oauth = create_spotify_oauth()
+    session.clear()
+    code = request.args.get('code')
+    token_info = sp_oauth.get_access_token(code)
+    session["token_info"] = token_info
+    return redirect("/getTracks")
