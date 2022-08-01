@@ -11,3 +11,15 @@ requires = [
     'pathlib',
     'pandas'
 ]
+
+
+setup(
+    name='Spotify2YoutubeAudio',
+    version='1.0',
+    description='An application that gets your Spotify songs and downloads the YoutubeMP3 version',
+    author='Gerald Matolo',
+    author_email='',
+    keywords='flask',
+    packages=find_packages(),
+    include_package_data=True,
+    
