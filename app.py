@@ -21,3 +21,9 @@ def authorize():
     token_info = sp_oauth.get_access_token(code)
     session["token_info"] = token_info
     return redirect("/getTracks")
+
+@app.route('/logout')
+def logout():
+    for key in list(session.keys()):
+        session.pop(key)
+    return redirect('/')
