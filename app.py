@@ -48,3 +48,7 @@ def get_all_tracks():
             results += [val]
         if (len(curGroup) < 50):
             break
+
+    df = pd.DataFrame(results, columns=["song names"]) 
+    df.to_csv('songs.csv', index=False)
+    return "done"
